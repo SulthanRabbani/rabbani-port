@@ -1,5 +1,5 @@
 
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import React, { createContext, useContext, useState, ReactNode, useEffect } from 'react';
 import content from '../data/content';
 
 type Language = 'en' | 'id';
@@ -17,7 +17,27 @@ interface LanguageProviderProps {
 }
 
 export function LanguageProvider({ children }: LanguageProviderProps) {
-  const [language, setLanguage] = useState<Language>('en');
+  const [language, setLanguage] = useState<Language>(() => {
+    // Try to get language from localStorage
+    const savedLanguage = localStorage.getItem('language') as Language;
+    if (savedLanguage && (savedLanguage === 'en' || savedLanguage === 'id')) {
+      return savedLanguage;
+    }
+    
+    // Default to browser language if available
+    const browserLang = navigator.language.split('-')[0];
+    if (browserLang === 'id') {
+      return 'id';
+    }
+    
+    // Default to English
+    return 'en';
+  });
+  
+  // Save language preference
+  useEffect(() => {
+    localStorage.setItem('language', language);
+  }, [language]);
 
   // Get translation for a key
   const t = (key: string): string => {

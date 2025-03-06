@@ -16,6 +16,14 @@ const content = {
     en: 'Contact',
     id: 'Kontak'
   },
+  'theme.dark': {
+    en: 'Dark Mode',
+    id: 'Mode Gelap'
+  },
+  'theme.light': {
+    en: 'Light Mode',
+    id: 'Mode Terang'
+  },
   'hero.greeting': {
     en: 'Hello, I am',
     id: 'Halo, Saya'
@@ -32,13 +40,29 @@ const content = {
     en: 'View My Work',
     id: 'Lihat Karya Saya'
   },
+  'hero.contact': {
+    en: 'Contact Me',
+    id: 'Hubungi Saya'
+  },
+  'hero.techStack': {
+    en: 'Tech Stack',
+    id: 'Teknologi'
+  },
+  'hero.scrollDown': {
+    en: 'Scroll Down',
+    id: 'Gulir ke Bawah'
+  },
   'about.subtitle': {
+    en: 'About Me',
+    id: 'Tentang Saya'
+  },
+  'about.title': {
     en: 'Who I Am',
     id: 'Siapa Saya'
   },
-  'about.title': {
-    en: 'About Me',
-    id: 'Tentang Saya'
+  'about.whoAmI': {
+    en: 'My Background',
+    id: 'Latar Belakang Saya'
   },
   'about.description': {
     en: 'I\'m a passionate Full Stack Developer with a focus on creating efficient and scalable web applications. With expertise in both frontend and backend technologies, I strive to build seamless user experiences while maintaining robust server-side functionality. My approach combines technical skill with creative problem-solving.',
@@ -52,17 +76,21 @@ const content = {
     en: 'Projects Completed',
     id: 'Proyek Selesai'
   },
+  'about.clients': {
+    en: 'Happy Clients',
+    id: 'Klien Puas'
+  },
   'about.skills': {
     en: 'My Skills',
     id: 'Keahlian Saya'
   },
   'projects.subtitle': {
-    en: 'My Work',
-    id: 'Karya Saya'
+    en: 'My Projects',
+    id: 'Proyek Saya'
   },
   'projects.title': {
-    en: 'Recent Projects',
-    id: 'Proyek Terbaru'
+    en: 'Recent Work',
+    id: 'Karya Terbaru'
   },
   'projects.description': {
     en: 'Here are some of my recent work that showcase my skills and expertise in full stack development.',
@@ -113,12 +141,12 @@ const content = {
     id: 'React Native, GraphQL, Node.js, PostgreSQL'
   },
   'contact.subtitle': {
-    en: 'Get In Touch',
-    id: 'Hubungi Saya'
+    en: 'Contact',
+    id: 'Kontak'
   },
   'contact.title': {
-    en: 'Contact Me',
-    id: 'Kontak Saya'
+    en: 'Get In Touch',
+    id: 'Hubungi Saya'
   },
   'contact.description': {
     en: 'Have a project in mind or want to collaborate? Feel free to reach out to me.',
@@ -140,17 +168,17 @@ const content = {
     en: 'Send Message',
     id: 'Kirim Pesan'
   },
-  'contact.location': {
-    en: 'Jakarta, Indonesia',
-    id: 'Jakarta, Indonesia'
+  'contact.getInTouch': {
+    en: 'Contact Information',
+    id: 'Informasi Kontak'
   },
-  'contact.email': {
-    en: 'hello@sulthan.dev',
-    id: 'hello@sulthan.dev'
+  'contact.locationLabel': {
+    en: 'Location',
+    id: 'Lokasi'
   },
-  'contact.phone': {
-    en: '+62 123 456 7890',
-    id: '+62 123 456 7890'
+  'contact.socialLabel': {
+    en: 'Follow Me',
+    id: 'Ikuti Saya'
   },
   'footer.madeWith': {
     en: 'Made with',

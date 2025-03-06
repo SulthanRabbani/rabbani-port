@@ -1,13 +1,34 @@
 
-import { useState } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
-import { useInView, getAnimationClass } from '@/lib/animations';
-import { ExternalLink, Github, ArrowRight } from 'lucide-react';
+import { ExternalLink, Github, Layers } from 'lucide-react';
 
 const Projects = () => {
   const { t } = useLanguage();
-  const { ref: projectsRef, isInView: projectsInView } = useInView({ threshold: 0.1 });
-  const [activeProject, setActiveProject] = useState<number | null>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+  
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.1 }
+    );
+    
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+    
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
   
   const projects = [
     {
@@ -40,23 +61,30 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 section-padding bg-secondary/30">
-      <div className="container mx-auto px-4">
-        <div className="mb-16 text-center" ref={projectsRef as React.RefObject<HTMLDivElement>}>
-          <div className={`inline-block mb-3 px-4 py-1 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-300 text-sm font-medium ${
-            getAnimationClass(projectsInView, 'fade-in')
+    <section 
+      id="projects" 
+      ref={sectionRef}
+      className="py-24 relative"
+    >
+      {/* Angled background with overlay */}
+      <div className="absolute inset-0 bg-secondary/50 dark:bg-secondary/30 -skew-y-2 transform origin-top-right h-[105%] -z-10"></div>
+      
+      <div className="container mx-auto px-4 relative">
+        <div className="text-center mb-16">
+          <div className={`inline-flex items-center px-3 py-1 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-300 text-sm font-medium transition-all duration-700 ${
+            isVisible ? 'opacity-100' : 'opacity-0 translate-y-4'
           }`}>
-            {t('projects.subtitle')}
+            <Layers className="w-4 h-4 mr-1.5" /> {t('projects.subtitle')}
           </div>
           
-          <h2 className={`text-3xl md:text-4xl font-bold mb-6 ${
-            getAnimationClass(projectsInView, 'fade-up')
+          <h2 className={`mt-4 text-3xl md:text-4xl font-bold transition-all duration-700 delay-100 ${
+            isVisible ? 'opacity-100' : 'opacity-0 translate-y-4'
           }`}>
             {t('projects.title')}
           </h2>
           
-          <p className={`text-lg text-muted-foreground max-w-2xl mx-auto ${
-            getAnimationClass(projectsInView, 'fade-up')
+          <p className={`mt-4 text-muted-foreground max-w-xl mx-auto transition-all duration-700 delay-200 ${
+            isVisible ? 'opacity-100' : 'opacity-0 translate-y-4'
           }`}>
             {t('projects.description')}
           </p>
@@ -66,16 +94,15 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div 
               key={project.id}
-              className={`group relative overflow-hidden rounded-xl transition-all duration-300 ${
-                getAnimationClass(projectsInView, 'fade-up')
+              className={`group transition-all duration-700 ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
               }`}
-              style={{ animationDelay: `${index * 150}ms` }}
-              onMouseEnter={() => setActiveProject(project.id)}
-              onMouseLeave={() => setActiveProject(null)}
+              style={{ transitionDelay: `${300 + index * 100}ms` }}
             >
-              <div className="relative h-full neo-blur bg-white/5 dark:bg-black/10 border border-border group-hover:border-purple-500/50 transition-all duration-300 rounded-xl overflow-hidden">
+              <div className="tech-card h-full flex flex-col group-hover:translate-y-[-5px] transition-all duration-300">
                 {/* Project Image */}
-                <div className="h-48 overflow-hidden">
+                <div className="h-48 overflow-hidden rounded-t-xl relative">
+                  <div className="absolute inset-0 bg-gradient-to-b from-purple-500/20 to-purple-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div>
                   <img 
                     src={project.image} 
                     alt={project.title} 
@@ -84,17 +111,17 @@ const Projects = () => {
                 </div>
                 
                 {/* Project Content */}
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+                <div className="p-6 flex-grow flex flex-col">
+                  <h3 className="text-xl font-bold mb-3 group-hover:text-purple-500 transition-colors duration-300">
                     {project.title}
                   </h3>
                   
-                  <p className="text-muted-foreground mb-4">
+                  <p className="text-muted-foreground mb-4 flex-grow">
                     {project.description}
                   </p>
                   
-                  <div className="mb-6">
-                    <div className="text-xs text-muted-foreground mb-2">
+                  <div className="mb-4">
+                    <div className="text-xs text-muted-foreground mb-2 uppercase tracking-wider font-medium">
                       Tech Stack
                     </div>
                     <div className="text-sm">
@@ -103,14 +130,14 @@ const Projects = () => {
                   </div>
                   
                   {/* Project Links */}
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between pt-4 border-t border-border">
                     <a 
                       href={project.demoUrl} 
                       className="inline-flex items-center text-sm text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 transition-colors"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <ExternalLink className="w-4 h-4 mr-1" />
+                      <ExternalLink className="w-4 h-4 mr-1.5" />
                       {t('projects.liveDemo')}
                     </a>
                     
@@ -120,20 +147,9 @@ const Projects = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <Github className="w-4 h-4 mr-1" />
+                      <Github className="w-4 h-4 mr-1.5" />
                       {t('projects.viewCode')}
                     </a>
-                  </div>
-                  
-                  {/* Animated hover effects */}
-                  <div 
-                    className={`absolute top-2 right-2 w-8 h-8 rounded-full bg-purple-500 text-white flex items-center justify-center transform transition-all duration-300 ${
-                      activeProject === project.id 
-                        ? 'opacity-100 scale-100' 
-                        : 'opacity-0 scale-50'
-                    }`}
-                  >
-                    <ArrowRight className="w-4 h-4" />
                   </div>
                 </div>
               </div>
