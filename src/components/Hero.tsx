@@ -24,11 +24,11 @@ const Hero = () => {
     return () => clearInterval(interval);
   }, []);
   
-  // New typing animation effect
+  // Improved typing animation effect
   const [typedText, setTypedText] = useState('');
   const [isTyping, setIsTyping] = useState(true);
   const fullText = t('hero.description');
-  const typingSpeed = 50; // milliseconds per character
+  const typingSpeed = 30; // Faster typing speed (milliseconds per character)
   const typingDelayRef = useRef<NodeJS.Timeout | null>(null);
   const cursorRef = useRef<HTMLSpanElement>(null);
 
@@ -47,9 +47,21 @@ const Hero = () => {
       if (charIndex < fullText.length) {
         setTypedText(fullText.substring(0, charIndex + 1));
         charIndex++;
-        typingDelayRef.current = setTimeout(typeNextChar, typingSpeed);
+        
+        // Vary the typing speed slightly for more natural effect
+        const variance = Math.random() * 15; // Add randomness between 0-15ms
+        const currentSpeed = typingSpeed + variance;
+        
+        typingDelayRef.current = setTimeout(typeNextChar, currentSpeed);
       } else {
         setIsTyping(false);
+        
+        // Reset animation after a pause
+        setTimeout(() => {
+          setTypedText('');
+          setIsTyping(true);
+          setTimeout(typeNextChar, 1500); // Wait before restarting
+        }, 4000); // Pause at the end before restarting
       }
     };
     
@@ -67,6 +79,8 @@ const Hero = () => {
   useEffect(() => {
     if (!isTyping && cursorRef.current) {
       cursorRef.current.classList.add('animate-pulse');
+    } else if (cursorRef.current) {
+      cursorRef.current.classList.remove('animate-pulse');
     }
   }, [isTyping]);
   
@@ -97,7 +111,7 @@ const Hero = () => {
               {typedText}
               <span 
                 ref={cursorRef} 
-                className={`ml-0.5 inline-block w-0.5 h-6 bg-purple-500 ${isTyping ? 'opacity-100' : 'animate-pulse'}`}
+                className={`ml-0.5 inline-block w-0.5 h-6 bg-purple-500 ${isTyping ? '' : 'animate-pulse'}`}
               ></span>
             </p>
             
