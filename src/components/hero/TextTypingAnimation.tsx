@@ -7,14 +7,12 @@ type TextTypingAnimationProps = {
 
 const TextTypingAnimation = ({ fullText }: TextTypingAnimationProps) => {
   const [typedText, setTypedText] = useState('');
-  const [isTyping, setIsTyping] = useState(true);
   const typingSpeed = 30;
   const typingDelayRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     // Reset typing when text changes
     setTypedText('');
-    setIsTyping(true);
     
     if (typingDelayRef.current) {
       clearTimeout(typingDelayRef.current);
@@ -32,16 +30,8 @@ const TextTypingAnimation = ({ fullText }: TextTypingAnimationProps) => {
         const currentSpeed = typingSpeed + variance;
         
         typingDelayRef.current = setTimeout(typeNextChar, currentSpeed);
-      } else {
-        setIsTyping(false);
-        
-        // Reset animation after a pause
-        setTimeout(() => {
-          setTypedText('');
-          setIsTyping(true);
-          setTimeout(typeNextChar, 1500);
-        }, 4000);
       }
+      // No else block to reset animation - it now stops after completion
     };
     
     // Start typing after a short delay
