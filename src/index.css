@@ -100,20 +100,6 @@
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   }
   
-  .glow-effect {
-    @apply relative;
-  }
-  
-  .glow-effect::before {
-    content: '';
-    @apply absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-purple-400 rounded-lg blur opacity-30 transition-all duration-1000 animate-pulse-slow;
-    z-index: -1;
-  }
-  
-  .glow-effect:hover::before {
-    @apply opacity-80;
-  }
-  
   .glassmorphism {
     @apply bg-background/60 backdrop-blur-lg border border-white/20 dark:border-white/10;
   }

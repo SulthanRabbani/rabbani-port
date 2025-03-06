@@ -54,7 +54,7 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4 pt-2">
               <a 
                 href="#projects" 
-                className="inline-flex items-center gap-2 px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition-colors duration-300 font-medium glow-effect"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition-colors duration-300 font-medium"
               >
                 {t('hero.cta')}
                 <ExternalLink className="w-4 h-4" />
