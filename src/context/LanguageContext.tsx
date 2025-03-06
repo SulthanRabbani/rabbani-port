@@ -1,5 +1,6 @@
 
 import React, { createContext, useContext, useState, ReactNode } from 'react';
+import content from '../data/content';
 
 type Language = 'en' | 'id';
 
@@ -20,10 +21,8 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
 
   // Get translation for a key
   const t = (key: string): string => {
-    const translations: Record<string, Record<Language, string>> = require('../data/content').default;
-    
-    if (translations[key] && translations[key][language]) {
-      return translations[key][language];
+    if (content[key] && content[key][language]) {
+      return content[key][language];
     }
     
     // Fallback to the key if translation is not found

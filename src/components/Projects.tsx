@@ -4,12 +4,6 @@ import { useLanguage } from '@/context/LanguageContext';
 import { useInView, getAnimationClass } from '@/lib/animations';
 import { ExternalLink, Github, ArrowRight } from 'lucide-react';
 
-const projectImages = [
-  '/placeholder.svg',
-  '/placeholder.svg',
-  '/placeholder.svg',
-];
-
 const Projects = () => {
   const { t } = useLanguage();
   const { ref: projectsRef, isInView: projectsInView } = useInView({ threshold: 0.1 });
@@ -21,7 +15,7 @@ const Projects = () => {
       title: t('project1.title'),
       description: t('project1.description'),
       technologies: t('project1.tech'),
-      image: projectImages[0],
+      image: '/placeholder.svg',
       demoUrl: '#',
       codeUrl: '#',
     },
@@ -30,7 +24,7 @@ const Projects = () => {
       title: t('project2.title'),
       description: t('project2.description'),
       technologies: t('project2.tech'),
-      image: projectImages[1],
+      image: '/placeholder.svg',
       demoUrl: '#',
       codeUrl: '#',
     },
@@ -39,7 +33,7 @@ const Projects = () => {
       title: t('project3.title'),
       description: t('project3.description'),
       technologies: t('project3.tech'),
-      image: projectImages[2],
+      image: '/placeholder.svg',
       demoUrl: '#',
       codeUrl: '#',
     },

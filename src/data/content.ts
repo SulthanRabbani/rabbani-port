@@ -1,6 +1,5 @@
 
-const translations = {
-  // Navbar items
+const content = {
   'nav.home': {
     en: 'Home',
     id: 'Beranda'
@@ -17,40 +16,36 @@ const translations = {
     en: 'Contact',
     id: 'Kontak'
   },
-  
-  // Hero section
   'hero.greeting': {
     en: 'Hello, I am',
     id: 'Halo, Saya'
   },
   'hero.role': {
     en: 'Full Stack Developer',
-    id: 'Full Stack Developer'
+    id: 'Pengembang Full Stack'
   },
   'hero.description': {
-    en: 'I build exceptional digital experiences with modern technologies',
-    id: 'Saya membangun pengalaman digital yang luar biasa dengan teknologi modern'
+    en: 'I build engaging, user-friendly applications with modern technologies. Passionate about creating clean code and solving complex problems.',
+    id: 'Saya membangun aplikasi yang menarik dan ramah pengguna dengan teknologi modern. Bersemangat dalam membuat kode yang bersih dan memecahkan masalah yang kompleks.'
   },
   'hero.cta': {
     en: 'View My Work',
     id: 'Lihat Karya Saya'
   },
-  
-  // About section
+  'about.subtitle': {
+    en: 'Who I Am',
+    id: 'Siapa Saya'
+  },
   'about.title': {
     en: 'About Me',
     id: 'Tentang Saya'
   },
-  'about.subtitle': {
-    en: 'My Background',
-    id: 'Latar Belakang Saya'
-  },
   'about.description': {
-    en: "I'm a passionate full stack developer with a keen eye for detail and a determination to deliver the very highest quality. I take great pride in my work, and I always try to better myself with every project I work on.",
-    id: "Saya adalah seorang full stack developer yang bersemangat dengan perhatian detail dan tekad untuk memberikan kualitas tertinggi. Saya sangat bangga dengan pekerjaan saya, dan saya selalu berusaha memperbaiki diri dengan setiap proyek yang saya kerjakan."
+    en: 'I\'m a passionate Full Stack Developer with a focus on creating efficient and scalable web applications. With expertise in both frontend and backend technologies, I strive to build seamless user experiences while maintaining robust server-side functionality. My approach combines technical skill with creative problem-solving.',
+    id: 'Saya adalah Pengembang Full Stack yang bersemangat dengan fokus pada pembuatan aplikasi web yang efisien dan terukur. Dengan keahlian dalam teknologi frontend dan backend, saya berusaha membangun pengalaman pengguna yang mulus sambil mempertahankan fungsionalitas sisi server yang kuat. Pendekatan saya menggabungkan keterampilan teknis dengan pemecahan masalah yang kreatif.'
   },
   'about.experience': {
-    en: 'Years of Experience',
+    en: 'Years Experience',
     id: 'Tahun Pengalaman'
   },
   'about.completed': {
@@ -58,26 +53,20 @@ const translations = {
     id: 'Proyek Selesai'
   },
   'about.skills': {
-    en: 'Technical Skills',
-    id: 'Kemampuan Teknis'
-  },
-  
-  // Projects section
-  'projects.title': {
-    en: 'My Projects',
-    id: 'Proyek Saya'
+    en: 'My Skills',
+    id: 'Keahlian Saya'
   },
   'projects.subtitle': {
-    en: 'Recent Work',
-    id: 'Karya Terbaru'
+    en: 'My Work',
+    id: 'Karya Saya'
+  },
+  'projects.title': {
+    en: 'Recent Projects',
+    id: 'Proyek Terbaru'
   },
   'projects.description': {
-    en: 'Here are some of my recent projects that showcase my skills and experience.',
-    id: 'Berikut adalah beberapa proyek terbaru saya yang menunjukkan kemampuan dan pengalaman saya.'
-  },
-  'projects.viewDetails': {
-    en: 'View Details',
-    id: 'Lihat Detail'
+    en: 'Here are some of my recent work that showcase my skills and expertise in full stack development.',
+    id: 'Berikut adalah beberapa karya terbaru saya yang menunjukkan keterampilan dan keahlian saya dalam pengembangan full stack.'
   },
   'projects.liveDemo': {
     en: 'Live Demo',
@@ -87,59 +76,53 @@ const translations = {
     en: 'View Code',
     id: 'Lihat Kode'
   },
-  
-  // Sample project data
   'project1.title': {
     en: 'E-Commerce Platform',
     id: 'Platform E-Commerce'
   },
   'project1.description': {
-    en: 'A full-featured e-commerce platform with secure payment processing, user authentication, and admin dashboard.',
-    id: 'Platform e-commerce lengkap dengan pemrosesan pembayaran yang aman, autentikasi pengguna, dan dasbor admin.'
+    en: 'A full-featured e-commerce platform with payment integration, user authentication, and admin dashboard.',
+    id: 'Platform e-commerce lengkap dengan integrasi pembayaran, otentikasi pengguna, dan dasbor admin.'
   },
   'project1.tech': {
-    en: 'React, Node.js, MongoDB, Stripe',
-    id: 'React, Node.js, MongoDB, Stripe'
+    en: 'React, Node.js, Express, MongoDB, Stripe',
+    id: 'React, Node.js, Express, MongoDB, Stripe'
   },
-  
   'project2.title': {
     en: 'Task Management App',
     id: 'Aplikasi Manajemen Tugas'
   },
   'project2.description': {
-    en: 'A collaborative task management application with real-time updates and team workspace features.',
-    id: 'Aplikasi manajemen tugas kolaboratif dengan pembaruan real-time dan fitur ruang kerja tim.'
+    en: 'A collaborative task management application with real-time updates and team collaboration features.',
+    id: 'Aplikasi manajemen tugas kolaboratif dengan pembaruan real-time dan fitur kolaborasi tim.'
   },
   'project2.tech': {
-    en: 'Vue.js, Firebase, Tailwind CSS',
-    id: 'Vue.js, Firebase, Tailwind CSS'
+    en: 'Vue.js, Firebase, Tailwind CSS, Socket.io',
+    id: 'Vue.js, Firebase, Tailwind CSS, Socket.io'
   },
-  
   'project3.title': {
-    en: 'AI Content Generator',
-    id: 'Generator Konten AI'
+    en: 'Health and Fitness Tracker',
+    id: 'Pelacak Kesehatan dan Kebugaran'
   },
   'project3.description': {
-    en: 'An AI-powered application that helps users generate high-quality content for various purposes.',
-    id: 'Aplikasi bertenaga AI yang membantu pengguna menghasilkan konten berkualitas tinggi untuk berbagai tujuan.'
+    en: 'A comprehensive health tracking application with workout plans, nutrition monitoring, and progress analytics.',
+    id: 'Aplikasi pelacakan kesehatan komprehensif dengan rencana latihan, pemantauan nutrisi, dan analitik kemajuan.'
   },
   'project3.tech': {
-    en: 'Next.js, OpenAI API, PostgreSQL',
-    id: 'Next.js, OpenAI API, PostgreSQL'
+    en: 'React Native, GraphQL, Node.js, PostgreSQL',
+    id: 'React Native, GraphQL, Node.js, PostgreSQL'
   },
-  
-  // Contact section
-  'contact.title': {
+  'contact.subtitle': {
     en: 'Get In Touch',
     id: 'Hubungi Saya'
   },
-  'contact.subtitle': {
+  'contact.title': {
     en: 'Contact Me',
     id: 'Kontak Saya'
   },
   'contact.description': {
-    en: "I'm currently open for freelance work and new opportunities. Feel free to reach out!",
-    id: "Saya saat ini terbuka untuk pekerjaan freelance dan peluang baru. Jangan ragu untuk menghubungi!"
+    en: 'Have a project in mind or want to collaborate? Feel free to reach out to me.',
+    id: 'Punya proyek atau ingin berkolaborasi? Jangan ragu untuk menghubungi saya.'
   },
   'contact.nameLabel': {
     en: 'Your Name',
@@ -153,28 +136,30 @@ const translations = {
     en: 'Your Message',
     id: 'Pesan Anda'
   },
-  'contact.submit': {
+  'contact.submitBtn': {
     en: 'Send Message',
     id: 'Kirim Pesan'
   },
-  'contact.emailMe': {
-    en: 'Email Me',
-    id: 'Email Saya'
+  'contact.location': {
+    en: 'Jakarta, Indonesia',
+    id: 'Jakarta, Indonesia'
   },
-  'contact.callMe': {
-    en: 'Call Me',
-    id: 'Hubungi Saya'
+  'contact.email': {
+    en: 'hello@sulthan.dev',
+    id: 'hello@sulthan.dev'
   },
-  
-  // Footer
-  'footer.rights': {
-    en: 'All Rights Reserved',
-    id: 'Hak Cipta Dilindungi'
+  'contact.phone': {
+    en: '+62 123 456 7890',
+    id: '+62 123 456 7890'
   },
   'footer.madeWith': {
     en: 'Made with',
     id: 'Dibuat dengan'
+  },
+  'footer.rights': {
+    en: 'All Rights Reserved',
+    id: 'Hak Cipta Dilindungi'
   }
 };
 
-export default translations;
+export default content;
