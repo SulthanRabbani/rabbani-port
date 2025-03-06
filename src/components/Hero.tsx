@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { ChevronDown, Code, ExternalLink } from 'lucide-react';
@@ -24,13 +23,12 @@ const Hero = () => {
     return () => clearInterval(interval);
   }, []);
   
-  // Improved typing animation effect
+  // Simplified text reveal animation
   const [typedText, setTypedText] = useState('');
   const [isTyping, setIsTyping] = useState(true);
   const fullText = t('hero.description');
-  const typingSpeed = 30; // Faster typing speed (milliseconds per character)
+  const typingSpeed = 30;
   const typingDelayRef = useRef<NodeJS.Timeout | null>(null);
-  const cursorRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
     // Reset typing when language changes
@@ -48,8 +46,8 @@ const Hero = () => {
         setTypedText(fullText.substring(0, charIndex + 1));
         charIndex++;
         
-        // Vary the typing speed slightly for more natural effect
-        const variance = Math.random() * 15; // Add randomness between 0-15ms
+        // Vary the typing speed for natural effect
+        const variance = Math.random() * 15;
         const currentSpeed = typingSpeed + variance;
         
         typingDelayRef.current = setTimeout(typeNextChar, currentSpeed);
@@ -60,8 +58,8 @@ const Hero = () => {
         setTimeout(() => {
           setTypedText('');
           setIsTyping(true);
-          setTimeout(typeNextChar, 1500); // Wait before restarting
-        }, 4000); // Pause at the end before restarting
+          setTimeout(typeNextChar, 1500);
+        }, 4000);
       }
     };
     
@@ -74,15 +72,6 @@ const Hero = () => {
       }
     };
   }, [fullText]);
-  
-  // Cursor blinking effect
-  useEffect(() => {
-    if (!isTyping && cursorRef.current) {
-      cursorRef.current.classList.add('animate-pulse');
-    } else if (cursorRef.current) {
-      cursorRef.current.classList.remove('animate-pulse');
-    }
-  }, [isTyping]);
   
   return (
     <section 
@@ -107,12 +96,8 @@ const Hero = () => {
               </span>
             </h1>
             
-            <p className="text-lg md:text-xl text-muted-foreground max-w-md min-h-[60px] flex">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-md min-h-[60px]">
               {typedText}
-              <span 
-                ref={cursorRef} 
-                className={`ml-0.5 inline-block w-0.5 h-6 bg-purple-500 ${isTyping ? '' : 'animate-pulse'}`}
-              ></span>
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 pt-2">
