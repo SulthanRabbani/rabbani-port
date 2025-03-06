@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { ChevronDown, Code, ExternalLink } from 'lucide-react';
 
@@ -24,6 +24,52 @@ const Hero = () => {
     return () => clearInterval(interval);
   }, []);
   
+  // New typing animation effect
+  const [typedText, setTypedText] = useState('');
+  const [isTyping, setIsTyping] = useState(true);
+  const fullText = t('hero.description');
+  const typingSpeed = 50; // milliseconds per character
+  const typingDelayRef = useRef<NodeJS.Timeout | null>(null);
+  const cursorRef = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    // Reset typing when language changes
+    setTypedText('');
+    setIsTyping(true);
+    
+    if (typingDelayRef.current) {
+      clearTimeout(typingDelayRef.current);
+    }
+    
+    let charIndex = 0;
+    
+    const typeNextChar = () => {
+      if (charIndex < fullText.length) {
+        setTypedText(fullText.substring(0, charIndex + 1));
+        charIndex++;
+        typingDelayRef.current = setTimeout(typeNextChar, typingSpeed);
+      } else {
+        setIsTyping(false);
+      }
+    };
+    
+    // Start typing after a short delay
+    typingDelayRef.current = setTimeout(typeNextChar, 500);
+    
+    return () => {
+      if (typingDelayRef.current) {
+        clearTimeout(typingDelayRef.current);
+      }
+    };
+  }, [fullText]);
+  
+  // Cursor blinking effect
+  useEffect(() => {
+    if (!isTyping && cursorRef.current) {
+      cursorRef.current.classList.add('animate-pulse');
+    }
+  }, [isTyping]);
+  
   return (
     <section 
       id="home" 
@@ -47,8 +93,12 @@ const Hero = () => {
               </span>
             </h1>
             
-            <p className="text-lg md:text-xl text-muted-foreground max-w-md">
-              {t('hero.description')}
+            <p className="text-lg md:text-xl text-muted-foreground max-w-md min-h-[60px] flex">
+              {typedText}
+              <span 
+                ref={cursorRef} 
+                className={`ml-0.5 inline-block w-0.5 h-6 bg-purple-500 ${isTyping ? 'opacity-100' : 'animate-pulse'}`}
+              ></span>
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 pt-2">
