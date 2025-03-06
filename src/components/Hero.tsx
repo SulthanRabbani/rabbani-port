@@ -61,7 +61,6 @@ const Hero = () => {
             </div>
             
             <div className="flex items-center gap-2 text-sm text-muted-foreground pt-4">
-              <span className="font-medium">{t('hero.techStack')}:</span>
               <TechStackTypingEffect techStacks={techStacks} />
             </div>
           </div>
@@ -77,7 +76,7 @@ const Hero = () => {
         </div>
       </div>
       
-      <ScrollIndicator text={t('hero.scrollDown')} />
+      <ScrollIndicator />
     </section>
   );
 };
