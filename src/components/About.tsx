@@ -53,7 +53,7 @@ const About = () => {
   ];
 
   const stats = [
-    { value: '5+', label: t('about.experience') },
+    { value: '5+', label: t('about.years') },
     { value: '40+', label: t('about.completed') },
     { value: '15+', label: t('about.clients') },
   ];
@@ -137,7 +137,7 @@ const About = () => {
           <div className="tech-card p-6">
             <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
               <Briefcase className="w-5 h-5 text-purple-500" />
-              <span>{t('about.experience')}</span>
+              <span>{t('about.workExperience')}</span>
             </h3>
             
             <div className="space-y-6">
@@ -178,7 +178,6 @@ const About = () => {
               <span>{t('about.skills')}</span>
             </h3>
             
-            {/* Desktop view with carousel animation */}
             <div className="hidden md:block overflow-hidden relative">
               <div className="skills-carousel">
                 <div className="skills-track">
@@ -208,7 +207,6 @@ const About = () => {
               </div>
             </div>
             
-            {/* Mobile view with static grid */}
             <div className="grid grid-cols-3 sm:grid-cols-4 gap-4 md:hidden">
               {allSkills.map((item, idx) => (
                 <div 
