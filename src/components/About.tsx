@@ -30,28 +30,25 @@ const About = () => {
     };
   }, []);
   
+  // Combined frontend and backend skills into one array
+  const combinedDevSkills = [
+    { name: 'React', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
+    { name: 'Vue.js', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg' },
+    { name: 'Next.js', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg' },
+    { name: 'TypeScript', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg' },
+    { name: 'Tailwind CSS', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg' },
+    { name: 'Node.js', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
+    { name: 'Express', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg' },
+    { name: 'Django', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg' },
+    { name: 'Laravel', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain.svg' },
+    { name: 'Spring Boot', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg' }
+  ];
+  
   const skills = [
     { 
-      name: 'Frontend', 
-      icon: <Layout className="w-5 h-5" />, 
-      items: [
-        { name: 'React', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
-        { name: 'Vue.js', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg' },
-        { name: 'Next.js', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg' },
-        { name: 'TypeScript', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg' },
-        { name: 'Tailwind CSS', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg' }
-      ] 
-    },
-    { 
-      name: 'Backend', 
-      icon: <Server className="w-5 h-5" />, 
-      items: [
-        { name: 'Node.js', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
-        { name: 'Express', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg' },
-        { name: 'Django', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg' },
-        { name: 'Laravel', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain.svg' },
-        { name: 'Spring Boot', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg' }
-      ] 
+      name: 'Development', 
+      icon: <Code className="w-5 h-5" />, 
+      items: combinedDevSkills
     },
     { 
       name: 'Database', 
@@ -104,7 +101,7 @@ const About = () => {
           </h2>
         </div>
 
-        {/* About me text - Now full width */}
+        {/* About me text */}
         <div className={`transition-all duration-700 delay-200 mb-12 ${
           isVisible ? 'opacity-100' : 'opacity-0 translate-y-4'
         }`}>
@@ -154,24 +151,24 @@ const About = () => {
                   {/* Desktop: Single unified list with continuous animation */}
                   <div className="hidden md:block overflow-hidden relative">
                     <div className="skills-carousel">
-                      <div className="skills-track flex items-center">
+                      <div className="skills-track flex items-center gap-8">
                         {/* We repeat the items multiple times to ensure continuous flow */}
                         {[...Array(3)].map((_, repeatIndex) => (
-                          <div key={repeatIndex} className="skills-slide flex gap-6">
+                          <div key={repeatIndex} className="skills-slide flex gap-8">
                             {skill.items.map((item, idx) => (
                               <div 
                                 key={`${repeatIndex}-${idx}`} 
-                                className="skill-icon group relative"
+                                className="skill-icon flex flex-col items-center"
                                 title={item.name}
                               >
-                                <div className="h-16 w-16 flex items-center justify-center bg-white dark:bg-gray-800 rounded-lg shadow-sm transition-all duration-300 group-hover:shadow-md">
+                                <div className="h-16 w-16 flex items-center justify-center bg-white dark:bg-gray-800 rounded-lg shadow-sm">
                                   <img 
                                     src={item.image} 
                                     alt={item.name} 
                                     className="w-10 h-10 object-contain"
                                   />
                                 </div>
-                                <div className="text-xs text-center mt-2 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div className="text-xs text-center mt-2 text-muted-foreground">
                                   {item.name}
                                 </div>
                               </div>
@@ -187,17 +184,17 @@ const About = () => {
                     {skill.items.map((item, idx) => (
                       <div 
                         key={idx} 
-                        className="skill-icon group relative"
+                        className="skill-icon flex flex-col items-center"
                         title={item.name}
                       >
-                        <div className="h-16 w-16 mx-auto flex items-center justify-center bg-white dark:bg-gray-800 rounded-lg shadow-sm transition-all duration-300 group-hover:shadow-md">
+                        <div className="h-16 w-16 mx-auto flex items-center justify-center bg-white dark:bg-gray-800 rounded-lg shadow-sm">
                           <img 
                             src={item.image} 
                             alt={item.name} 
                             className="w-10 h-10 object-contain"
                           />
                         </div>
-                        <div className="text-xs text-center mt-2 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div className="text-xs text-center mt-2 text-muted-foreground">
                           {item.name}
                         </div>
                       </div>
