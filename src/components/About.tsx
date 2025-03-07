@@ -35,44 +35,44 @@ const About = () => {
       name: 'Frontend', 
       icon: <Layout className="w-5 h-5" />, 
       items: [
-        { name: 'React', image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=150&h=150&fit=crop' },
-        { name: 'Vue.js', image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=150&h=150&fit=crop' },
-        { name: 'Next.js', image: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=150&h=150&fit=crop' },
-        { name: 'TypeScript', image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=150&h=150&fit=crop' },
-        { name: 'Tailwind CSS', image: 'https://images.unsplash.com/photo-1483058712412-4245e9b90334?w=150&h=150&fit=crop' }
+        { name: 'React', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
+        { name: 'Vue.js', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg' },
+        { name: 'Next.js', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg' },
+        { name: 'TypeScript', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg' },
+        { name: 'Tailwind CSS', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg' }
       ] 
     },
     { 
       name: 'Backend', 
       icon: <Server className="w-5 h-5" />, 
       items: [
-        { name: 'Node.js', image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=150&h=150&fit=crop' },
-        { name: 'Express', image: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=150&h=150&fit=crop' },
-        { name: 'Django', image: 'https://images.unsplash.com/photo-1483058712412-4245e9b90334?w=150&h=150&fit=crop' },
-        { name: 'Laravel', image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=150&h=150&fit=crop' },
-        { name: 'Spring Boot', image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=150&h=150&fit=crop' }
+        { name: 'Node.js', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
+        { name: 'Express', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg' },
+        { name: 'Django', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg' },
+        { name: 'Laravel', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain.svg' },
+        { name: 'Spring Boot', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg' }
       ] 
     },
     { 
       name: 'Database', 
       icon: <Database className="w-5 h-5" />, 
       items: [
-        { name: 'MongoDB', image: 'https://images.unsplash.com/photo-1483058712412-4245e9b90334?w=150&h=150&fit=crop' },
-        { name: 'PostgreSQL', image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=150&h=150&fit=crop' },
-        { name: 'MySQL', image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=150&h=150&fit=crop' },
-        { name: 'Redis', image: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=150&h=150&fit=crop' },
-        { name: 'Firebase', image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=150&h=150&fit=crop' }
+        { name: 'MongoDB', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg' },
+        { name: 'PostgreSQL', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' },
+        { name: 'MySQL', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
+        { name: 'Redis', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg' },
+        { name: 'Firebase', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg' }
       ] 
     },
     { 
       name: 'Other', 
       icon: <Code className="w-5 h-5" />, 
       items: [
-        { name: 'Docker', image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=150&h=150&fit=crop' },
-        { name: 'AWS', image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=150&h=150&fit=crop' },
-        { name: 'Git', image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=150&h=150&fit=crop' },
-        { name: 'GraphQL', image: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=150&h=150&fit=crop' },
-        { name: 'RESTful APIs', image: 'https://images.unsplash.com/photo-1483058712412-4245e9b90334?w=150&h=150&fit=crop' }
+        { name: 'Docker', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
+        { name: 'AWS', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg' },
+        { name: 'Git', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
+        { name: 'GraphQL', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg' },
+        { name: 'RESTful APIs', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' }
       ] 
     },
   ];
@@ -159,13 +159,13 @@ const About = () => {
                       {skill.items.map((item, idx) => (
                         <div 
                           key={idx} 
-                          className="w-20 h-20 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300"
+                          className="w-20 h-20 rounded-lg overflow-hidden p-2 flex items-center justify-center bg-white dark:bg-gray-800 shadow-md hover:shadow-lg transition-all duration-300"
                           title={item.name}
                         >
                           <img 
                             src={item.image} 
                             alt={item.name} 
-                            className="w-full h-full object-cover"
+                            className="w-full h-full object-contain"
                           />
                         </div>
                       ))}
@@ -182,3 +182,4 @@ const About = () => {
 };
 
 export default About;
+
