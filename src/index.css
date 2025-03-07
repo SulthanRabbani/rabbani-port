@@ -128,7 +128,7 @@
     display: none;
   }
   
-  /* Enhanced skill carousel animation with continuous looping for ALL skill sections */
+  /* Enhanced skill carousel animation with consistent speed for ALL skill sections */
   .skills-carousel {
     position: relative;
     overflow: hidden;
@@ -143,6 +143,7 @@
     will-change: transform;
     animation: scroll 25s linear infinite;
     width: fit-content;
+    display: flex;
   }
   
   .skills-slide {
@@ -155,7 +156,7 @@
       transform: translateX(0);
     }
     100% {
-      transform: translateX(-33.33%); /* This ensures smooth looping with our 3x repeat */
+      transform: translateX(-33.33%); /* Ensure smooth looping with our 3x repeat */
     }
   }
 }
