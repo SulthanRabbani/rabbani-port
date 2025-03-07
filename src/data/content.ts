@@ -84,6 +84,34 @@ const content = {
     en: 'Technologies',
     id: 'Teknologi'
   },
+  'about.experience': {
+    en: 'Work Experience',
+    id: 'Pengalaman Kerja'
+  },
+  'experience.role1': {
+    en: 'Senior Full Stack Developer',
+    id: 'Pengembang Full Stack Senior'
+  },
+  'experience.description1': {
+    en: 'Led development of enterprise applications, implementing best practices and mentoring junior developers.',
+    id: 'Memimpin pengembangan aplikasi perusahaan, menerapkan praktik terbaik dan membimbing pengembang junior.'
+  },
+  'experience.role2': {
+    en: 'Full Stack Developer',
+    id: 'Pengembang Full Stack'
+  },
+  'experience.description2': {
+    en: 'Developed and maintained multiple web applications, focusing on frontend UI/UX and backend API development.',
+    id: 'Mengembangkan dan memelihara beberapa aplikasi web, fokus pada UI/UX frontend dan pengembangan API backend.'
+  },
+  'experience.role3': {
+    en: 'Junior Web Developer',
+    id: 'Pengembang Web Junior'
+  },
+  'experience.description3': {
+    en: 'Created responsive websites and added features to existing applications under senior guidance.',
+    id: 'Membuat website responsif dan menambahkan fitur ke aplikasi yang ada di bawah bimbingan senior.'
+  },
   'projects.subtitle': {
     en: 'My Projects',
     id: 'Proyek Saya'
