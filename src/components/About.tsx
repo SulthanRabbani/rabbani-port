@@ -1,24 +1,7 @@
 
 import { useRef, useEffect, useState } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
-import { 
-  Code, 
-  Database, 
-  Layout, 
-  Server, 
-  Star, 
-  User,
-  Globe,
-  Cpu,
-  Cloud,
-  BarChart,
-  Layers,
-  Pencil,
-  Terminal,
-  FileCode,
-  PackageCheck,
-  Smartphone
-} from 'lucide-react';
+import { Code, Database, Layout, Server, Star, User } from 'lucide-react';
 
 const About = () => {
   const { t } = useLanguage();
@@ -52,44 +35,44 @@ const About = () => {
       name: 'Frontend', 
       icon: <Layout className="w-5 h-5" />, 
       items: [
-        { name: 'React', icon: <Code className="w-4 h-4" /> },
-        { name: 'Vue.js', icon: <Layers className="w-4 h-4" /> },
-        { name: 'Next.js', icon: <Globe className="w-4 h-4" /> },
-        { name: 'TypeScript', icon: <FileCode className="w-4 h-4" /> },
-        { name: 'Tailwind CSS', icon: <Pencil className="w-4 h-4" /> }
+        { name: 'React', image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=150&h=150&fit=crop' },
+        { name: 'Vue.js', image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=150&h=150&fit=crop' },
+        { name: 'Next.js', image: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=150&h=150&fit=crop' },
+        { name: 'TypeScript', image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=150&h=150&fit=crop' },
+        { name: 'Tailwind CSS', image: 'https://images.unsplash.com/photo-1483058712412-4245e9b90334?w=150&h=150&fit=crop' }
       ] 
     },
     { 
       name: 'Backend', 
       icon: <Server className="w-5 h-5" />, 
       items: [
-        { name: 'Node.js', icon: <Terminal className="w-4 h-4" /> },
-        { name: 'Express', icon: <PackageCheck className="w-4 h-4" /> },
-        { name: 'Django', icon: <Globe className="w-4 h-4" /> },
-        { name: 'Laravel', icon: <Code className="w-4 h-4" /> },
-        { name: 'Spring Boot', icon: <Layers className="w-4 h-4" /> }
+        { name: 'Node.js', image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=150&h=150&fit=crop' },
+        { name: 'Express', image: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=150&h=150&fit=crop' },
+        { name: 'Django', image: 'https://images.unsplash.com/photo-1483058712412-4245e9b90334?w=150&h=150&fit=crop' },
+        { name: 'Laravel', image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=150&h=150&fit=crop' },
+        { name: 'Spring Boot', image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=150&h=150&fit=crop' }
       ] 
     },
     { 
       name: 'Database', 
       icon: <Database className="w-5 h-5" />, 
       items: [
-        { name: 'MongoDB', icon: <Database className="w-4 h-4" /> },
-        { name: 'PostgreSQL', icon: <Database className="w-4 h-4" /> },
-        { name: 'MySQL', icon: <Database className="w-4 h-4" /> },
-        { name: 'Redis', icon: <Database className="w-4 h-4" /> },
-        { name: 'Firebase', icon: <Cloud className="w-4 h-4" /> }
+        { name: 'MongoDB', image: 'https://images.unsplash.com/photo-1483058712412-4245e9b90334?w=150&h=150&fit=crop' },
+        { name: 'PostgreSQL', image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=150&h=150&fit=crop' },
+        { name: 'MySQL', image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=150&h=150&fit=crop' },
+        { name: 'Redis', image: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=150&h=150&fit=crop' },
+        { name: 'Firebase', image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=150&h=150&fit=crop' }
       ] 
     },
     { 
       name: 'Other', 
       icon: <Code className="w-5 h-5" />, 
       items: [
-        { name: 'Docker', icon: <PackageCheck className="w-4 h-4" /> },
-        { name: 'AWS', icon: <Cloud className="w-4 h-4" /> },
-        { name: 'Git', icon: <Code className="w-4 h-4" /> },
-        { name: 'GraphQL', icon: <Cpu className="w-4 h-4" /> },
-        { name: 'RESTful APIs', icon: <Globe className="w-4 h-4" /> }
+        { name: 'Docker', image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=150&h=150&fit=crop' },
+        { name: 'AWS', image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=150&h=150&fit=crop' },
+        { name: 'Git', image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=150&h=150&fit=crop' },
+        { name: 'GraphQL', image: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=150&h=150&fit=crop' },
+        { name: 'RESTful APIs', image: 'https://images.unsplash.com/photo-1483058712412-4245e9b90334?w=150&h=150&fit=crop' }
       ] 
     },
   ];
@@ -176,13 +159,14 @@ const About = () => {
                       {skill.items.map((item, idx) => (
                         <div 
                           key={idx} 
-                          className="px-3 py-2 flex flex-col items-center justify-center rounded-lg bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300"
+                          className="w-20 h-20 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300"
                           title={item.name}
                         >
-                          <div className="p-2">
-                            {item.icon}
-                          </div>
-                          <span className="text-xs mt-1">{item.name}</span>
+                          <img 
+                            src={item.image} 
+                            alt={item.name} 
+                            className="w-full h-full object-cover"
+                          />
                         </div>
                       ))}
                     </div>
