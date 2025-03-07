@@ -87,6 +87,10 @@ const content = {
     en: 'Work Experience',
     id: 'Pengalaman Kerja'
   },
+  'experience.company': {
+    en: 'ABC Technology Solutions',
+    id: 'ABC Technology Solutions'
+  },
   'experience.role1': {
     en: 'Senior Full Stack Developer',
     id: 'Pengembang Full Stack Senior'
