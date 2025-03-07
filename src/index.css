@@ -127,4 +127,24 @@
   .hide-scrollbar::-webkit-scrollbar {
     display: none;
   }
+  
+  /* Skill slider animation for desktop */
+  .skill-slider {
+    display: flex;
+    animation: slideSkills 30s linear infinite;
+    width: max-content;
+  }
+  
+  @keyframes slideSkills {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  .skill-slider:hover {
+    animation-play-state: paused;
+  }
 }

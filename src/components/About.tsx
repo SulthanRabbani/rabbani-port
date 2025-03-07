@@ -1,3 +1,4 @@
+
 import { useRef, useEffect, useState } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { Code, Database, Layout, Server, Star, User } from 'lucide-react';
@@ -132,7 +133,7 @@ const About = () => {
           </div>
         </div>
         
-        {/* Skills - Now below the background section */}
+        {/* Skills - Now below the background section with horizontal scroll animation on desktop */}
         <div className={`transition-all duration-700 delay-300 ${
           isVisible ? 'opacity-100' : 'opacity-0 translate-y-4'
         }`}>
@@ -150,7 +151,53 @@ const About = () => {
                     <h4 className="font-medium">{skill.name}</h4>
                   </div>
                   
-                  <div className="grid grid-cols-3 sm:grid-cols-5 gap-4">
+                  {/* Desktop: Horizontal scrolling container with animation */}
+                  <div className="hidden md:block overflow-hidden relative">
+                    <div className="skill-slider flex animate-slide">
+                      {/* First set of items */}
+                      {skill.items.map((item, idx) => (
+                        <div 
+                          key={`first-${idx}`} 
+                          className="skill-icon group relative flex-shrink-0 mx-4"
+                          title={item.name}
+                        >
+                          <div className="h-16 w-16 flex items-center justify-center bg-white dark:bg-gray-800 rounded-lg shadow-sm transition-all duration-300 group-hover:shadow-md">
+                            <img 
+                              src={item.image} 
+                              alt={item.name} 
+                              className="w-10 h-10 object-contain"
+                            />
+                          </div>
+                          <div className="text-xs text-center mt-2 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            {item.name}
+                          </div>
+                        </div>
+                      ))}
+                      
+                      {/* Duplicate set for seamless looping */}
+                      {skill.items.map((item, idx) => (
+                        <div 
+                          key={`second-${idx}`} 
+                          className="skill-icon group relative flex-shrink-0 mx-4"
+                          title={item.name}
+                        >
+                          <div className="h-16 w-16 flex items-center justify-center bg-white dark:bg-gray-800 rounded-lg shadow-sm transition-all duration-300 group-hover:shadow-md">
+                            <img 
+                              src={item.image} 
+                              alt={item.name} 
+                              className="w-10 h-10 object-contain"
+                            />
+                          </div>
+                          <div className="text-xs text-center mt-2 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            {item.name}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  
+                  {/* Mobile: Regular grid layout */}
+                  <div className="grid grid-cols-3 sm:grid-cols-5 gap-4 md:hidden">
                     {skill.items.map((item, idx) => (
                       <div 
                         key={idx} 
