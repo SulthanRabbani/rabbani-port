@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -127,7 +128,7 @@
     display: none;
   }
   
-  /* Enhanced skill carousel animation with continuous looping */
+  /* Enhanced skill carousel animation with continuous looping for ALL skill sections */
   .skills-carousel {
     position: relative;
     overflow: hidden;
@@ -140,7 +141,7 @@
     position: relative;
     white-space: nowrap;
     will-change: transform;
-    animation: scroll 30s linear infinite;
+    animation: scroll 25s linear infinite;
     width: fit-content;
   }
   

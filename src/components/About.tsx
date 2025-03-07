@@ -148,7 +148,7 @@ const About = () => {
                     <h4 className="font-medium">{skill.name}</h4>
                   </div>
                   
-                  {/* Desktop: Single unified list with continuous animation */}
+                  {/* Desktop: Single unified list with continuous animation - Now applied to ALL skill sections */}
                   <div className="hidden md:block overflow-hidden relative">
                     <div className="skills-carousel">
                       <div className="skills-track flex items-center gap-8">
