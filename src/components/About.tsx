@@ -144,29 +144,31 @@ const About = () => {
                 <span>{t('about.skills')}</span>
               </h3>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="space-y-8">
                 {skills.map((skill, index) => (
-                  <div 
-                    key={index} 
-                    className="p-4 rounded-lg border border-border bg-background/50"
-                  >
-                    <div className="flex items-center gap-2 mb-3 text-purple-600 dark:text-purple-400">
+                  <div key={index} className="border-b border-border pb-6 last:border-0 last:pb-0">
+                    <div className="flex items-center gap-2 mb-4 text-purple-600 dark:text-purple-400">
                       {skill.icon}
                       <h4 className="font-medium">{skill.name}</h4>
                     </div>
                     
-                    <div className="flex flex-wrap gap-2">
+                    <div className="grid grid-cols-3 sm:grid-cols-5 gap-4">
                       {skill.items.map((item, idx) => (
                         <div 
                           key={idx} 
-                          className="w-20 h-20 rounded-lg overflow-hidden p-2 flex items-center justify-center bg-white dark:bg-gray-800 shadow-md hover:shadow-lg transition-all duration-300"
+                          className="skill-icon group relative"
                           title={item.name}
                         >
-                          <img 
-                            src={item.image} 
-                            alt={item.name} 
-                            className="w-full h-full object-contain"
-                          />
+                          <div className="h-16 w-16 mx-auto flex items-center justify-center bg-white dark:bg-gray-800 rounded-lg shadow-sm transition-all duration-300 group-hover:shadow-md">
+                            <img 
+                              src={item.image} 
+                              alt={item.name} 
+                              className="w-10 h-10 object-contain"
+                            />
+                          </div>
+                          <div className="text-xs text-center mt-2 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            {item.name}
+                          </div>
                         </div>
                       ))}
                     </div>
@@ -182,4 +184,3 @@ const About = () => {
 };
 
 export default About;
-
