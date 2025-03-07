@@ -148,10 +148,10 @@ const About = () => {
                     <h4 className="font-medium">{skill.name}</h4>
                   </div>
                   
-                  {/* Desktop: Unified skills carousel with consistent animation for ALL sections */}
+                  {/* Desktop: Single unified list with continuous animation - Now applied to ALL skill sections */}
                   <div className="hidden md:block overflow-hidden relative">
                     <div className="skills-carousel">
-                      <div className="skills-track">
+                      <div className="skills-track flex items-center gap-8">
                         {/* We repeat the items multiple times to ensure continuous flow */}
                         {[...Array(3)].map((_, repeatIndex) => (
                           <div key={repeatIndex} className="skills-slide flex gap-8">
