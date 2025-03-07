@@ -133,7 +133,7 @@ const About = () => {
           </div>
         </div>
         
-        {/* Skills - Now below the background section with horizontal scroll animation on desktop */}
+        {/* Skills - Now below the background section with continuous horizontal scroll animation on desktop */}
         <div className={`transition-all duration-700 delay-300 ${
           isVisible ? 'opacity-100' : 'opacity-0 translate-y-4'
         }`}>
@@ -151,14 +151,14 @@ const About = () => {
                     <h4 className="font-medium">{skill.name}</h4>
                   </div>
                   
-                  {/* Desktop: Horizontal scrolling container with animation */}
-                  <div className="hidden md:block overflow-hidden relative">
-                    <div className="skill-slider flex animate-slide">
+                  {/* Desktop: Horizontal scrolling container with continuous animation */}
+                  <div className="hidden md:block overflow-hidden relative w-full">
+                    <div className="skill-slider flex gap-8 py-2">
                       {/* First set of items */}
                       {skill.items.map((item, idx) => (
                         <div 
                           key={`first-${idx}`} 
-                          className="skill-icon group relative flex-shrink-0 mx-4"
+                          className="skill-icon group relative flex-shrink-0"
                           title={item.name}
                         >
                           <div className="h-16 w-16 flex items-center justify-center bg-white dark:bg-gray-800 rounded-lg shadow-sm transition-all duration-300 group-hover:shadow-md">
@@ -178,7 +178,7 @@ const About = () => {
                       {skill.items.map((item, idx) => (
                         <div 
                           key={`second-${idx}`} 
-                          className="skill-icon group relative flex-shrink-0 mx-4"
+                          className="skill-icon group relative flex-shrink-0"
                           title={item.name}
                         >
                           <div className="h-16 w-16 flex items-center justify-center bg-white dark:bg-gray-800 rounded-lg shadow-sm transition-all duration-300 group-hover:shadow-md">
