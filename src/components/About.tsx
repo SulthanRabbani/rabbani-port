@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
-import { Code, Database, Layout, Server, Star, User } from 'lucide-react';
+import { Code, Star, User } from 'lucide-react';
 
 const About = () => {
   const { t } = useLanguage();
@@ -29,7 +29,7 @@ const About = () => {
     };
   }, []);
   
-  const combinedDevSkills = [
+  const allSkills = [
     { name: 'React', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
     { name: 'Vue.js', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg' },
     { name: 'Next.js', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg' },
@@ -39,37 +39,25 @@ const About = () => {
     { name: 'Express', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg' },
     { name: 'Django', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg' },
     { name: 'Laravel', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain.svg' },
-    { name: 'Spring Boot', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg' }
+    { name: 'Spring Boot', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg' },
+    { name: 'MongoDB', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg' },
+    { name: 'PostgreSQL', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' },
+    { name: 'MySQL', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
+    { name: 'Redis', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg' },
+    { name: 'Firebase', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg' },
+    { name: 'Docker', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
+    { name: 'AWS', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg' },
+    { name: 'Git', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
+    { name: 'GraphQL', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg' },
+    { name: 'RESTful APIs', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' }
   ];
   
   const skills = [
     { 
       name: 'Development', 
       icon: <Code className="w-5 h-5" />, 
-      items: combinedDevSkills
-    },
-    { 
-      name: 'Database', 
-      icon: <Database className="w-5 h-5" />, 
-      items: [
-        { name: 'MongoDB', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg' },
-        { name: 'PostgreSQL', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' },
-        { name: 'MySQL', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
-        { name: 'Redis', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg' },
-        { name: 'Firebase', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg' }
-      ] 
-    },
-    { 
-      name: 'Other', 
-      icon: <Code className="w-5 h-5" />, 
-      items: [
-        { name: 'Docker', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
-        { name: 'AWS', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg' },
-        { name: 'Git', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
-        { name: 'GraphQL', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg' },
-        { name: 'RESTful APIs', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' }
-      ] 
-    },
+      items: allSkills
+    }
   ];
 
   const stats = [
@@ -138,7 +126,7 @@ const About = () => {
             
             <div className="space-y-8">
               {skills.map((skill, index) => (
-                <div key={index} className="border-b border-border pb-6 last:border-0 last:pb-0">
+                <div key={index} className="pb-6 last:pb-0">
                   <div className="flex items-center gap-2 mb-4 text-purple-600 dark:text-purple-400">
                     {skill.icon}
                     <h4 className="font-medium">{skill.name}</h4>
@@ -155,7 +143,7 @@ const About = () => {
                                 className="skill-icon flex flex-col items-center"
                                 title={item.name}
                               >
-                                <div className="h-16 w-16 flex items-center justify-center bg-white dark:bg-gray-800 rounded-lg shadow-sm">
+                                <div className="h-16 w-16 flex items-center justify-center">
                                   <img 
                                     src={item.image} 
                                     alt={item.name} 
@@ -180,7 +168,7 @@ const About = () => {
                         className="skill-icon flex flex-col items-center"
                         title={item.name}
                       >
-                        <div className="h-16 w-16 mx-auto flex items-center justify-center bg-white dark:bg-gray-800 rounded-lg shadow-sm">
+                        <div className="h-16 w-16 mx-auto flex items-center justify-center">
                           <img 
                             src={item.image} 
                             alt={item.name} 
