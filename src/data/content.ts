@@ -1,4 +1,3 @@
-
 const content = {
   'nav.home': {
     en: 'Home',
@@ -93,24 +92,24 @@ const content = {
     id: 'Pengembang Full Stack Senior'
   },
   'experience.description1': {
-    en: 'Led development of enterprise applications, implementing best practices and mentoring junior developers.',
-    id: 'Memimpin pengembangan aplikasi perusahaan, menerapkan praktik terbaik dan membimbing pengembang junior.'
+    en: 'Developed and maintained full-stack web applications with a focus on Front-End technologies. Integrated AI technologies to automate workflows, enhance data analysis, and improve functionalities.',
+    id: 'Mengembangkan dan memelihara aplikasi web full-stack dengan fokus pada teknologi Front-End. Mengintegrasikan teknologi AI untuk mengotomatisasi alur kerja, meningkatkan analisis data, dan memperbaiki fungsionalitas.'
   },
   'experience.role2': {
     en: 'Full Stack Developer',
     id: 'Pengembang Full Stack'
   },
   'experience.description2': {
-    en: 'Developed and maintained multiple web applications, focusing on frontend UI/UX and backend API development.',
-    id: 'Mengembangkan dan memelihara beberapa aplikasi web, fokus pada UI/UX frontend dan pengembangan API backend.'
+    en: 'Collaborated with cross-functional teams to achieve project goals efficiently. Conducted regular code reviews to maintain high coding standards.',
+    id: 'Berkolaborasi dengan tim lintas fungsi untuk mencapai tujuan proyek secara efisien. Melakukan tinjauan kode secara berkala untuk mempertahankan standar pengkodean yang tinggi.'
   },
   'experience.role3': {
     en: 'Junior Web Developer',
     id: 'Pengembang Web Junior'
   },
   'experience.description3': {
-    en: 'Created responsive websites and added features to existing applications under senior guidance.',
-    id: 'Membuat website responsif dan menambahkan fitur ke aplikasi yang ada di bawah bimbingan senior.'
+    en: 'Led end-to-end development of dynamic web applications, ensuring seamless front-end and back-end integration. Implemented responsive design principles to enhance user experience across devices.',
+    id: 'Memimpin pengembangan end-to-end aplikasi web dinamis, memastikan integrasi front-end dan back-end yang mulus. Menerapkan prinsip desain responsif untuk meningkatkan pengalaman pengguna di berbagai perangkat.'
   },
   'projects.subtitle': {
     en: 'My Projects',
