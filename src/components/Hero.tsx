@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
-import { Code, ExternalLink } from 'lucide-react';
+import { Code, ExternalLink, Download } from 'lucide-react';
 import TechStackTypingEffect from './hero/TechStackTypingEffect';
 import TextTypingAnimation from './hero/TextTypingAnimation';
 import HeroShapes from './hero/HeroShapes';
@@ -49,8 +49,8 @@ const Hero = () => {
                 href="#projects" 
                 className="inline-flex items-center gap-2 px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition-colors duration-300 font-medium"
               >
-                {t('hero.cta')}
-                <ExternalLink className="w-4 h-4" />
+                Curriculum Vitae
+                <Download className="w-4 h-4" />
               </a>
               <a 
                 href="#contact" 

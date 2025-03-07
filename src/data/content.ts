@@ -36,9 +36,9 @@ const content = {
     en: 'I build engaging, user-friendly applications with modern technologies. Passionate about creating clean code and solving complex problems.',
     id: 'Saya membangun aplikasi yang menarik dan ramah pengguna dengan teknologi modern. Bersemangat dalam membuat kode yang bersih dan memecahkan masalah yang kompleks.'
   },
-  'hero.cta': {
-    en: 'View My Work',
-    id: 'Lihat Karya Saya'
+  'hero.cv': {
+    en: 'Curriculum Vitae',
+    id: 'Curriculum Vitae'
   },
   'hero.contact': {
     en: 'Contact Me',
