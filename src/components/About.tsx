@@ -1,4 +1,3 @@
-
 import { useRef, useEffect, useState } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { Code, Database, Layout, Server, Star, User } from 'lucide-react';
@@ -104,77 +103,75 @@ const About = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
-          {/* About me text */}
-          <div className={`lg:col-span-2 transition-all duration-700 delay-200 ${
-            isVisible ? 'opacity-100' : 'opacity-0 translate-y-4'
-          }`}>
-            <div className="tech-card p-6 h-full">
-              <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
-                <Star className="w-5 h-5 text-purple-500" />
-                <span>{t('about.whoAmI')}</span>
-              </h3>
-              
-              <p className="text-muted-foreground mb-6">
-                {t('about.description')}
-              </p>
-              
-              <div className="grid grid-cols-3 gap-4 mt-6">
-                {stats.map((stat, index) => (
-                  <div key={index} className="text-center p-3 rounded-lg bg-purple-50 dark:bg-purple-900/10">
-                    <div className="text-2xl font-bold text-purple-600 dark:text-purple-400 mb-1">
-                      {stat.value}
-                    </div>
-                    <div className="text-xs text-muted-foreground">
-                      {stat.label}
-                    </div>
+        {/* About me text - Now full width */}
+        <div className={`transition-all duration-700 delay-200 mb-12 ${
+          isVisible ? 'opacity-100' : 'opacity-0 translate-y-4'
+        }`}>
+          <div className="tech-card p-6">
+            <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
+              <Star className="w-5 h-5 text-purple-500" />
+              <span>{t('about.whoAmI')}</span>
+            </h3>
+            
+            <p className="text-muted-foreground mb-6">
+              {t('about.description')}
+            </p>
+            
+            <div className="grid grid-cols-3 gap-4 mt-6">
+              {stats.map((stat, index) => (
+                <div key={index} className="text-center p-3 rounded-lg bg-purple-50 dark:bg-purple-900/10">
+                  <div className="text-2xl font-bold text-purple-600 dark:text-purple-400 mb-1">
+                    {stat.value}
                   </div>
-                ))}
-              </div>
+                  <div className="text-xs text-muted-foreground">
+                    {stat.label}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
-          
-          {/* Skills */}
-          <div className={`lg:col-span-3 transition-all duration-700 delay-300 ${
-            isVisible ? 'opacity-100' : 'opacity-0 translate-y-4'
-          }`}>
-            <div className="tech-card p-6">
-              <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
-                <Code className="w-5 h-5 text-purple-500" />
-                <span>{t('about.skills')}</span>
-              </h3>
-              
-              <div className="space-y-8">
-                {skills.map((skill, index) => (
-                  <div key={index} className="border-b border-border pb-6 last:border-0 last:pb-0">
-                    <div className="flex items-center gap-2 mb-4 text-purple-600 dark:text-purple-400">
-                      {skill.icon}
-                      <h4 className="font-medium">{skill.name}</h4>
-                    </div>
-                    
-                    <div className="grid grid-cols-3 sm:grid-cols-5 gap-4">
-                      {skill.items.map((item, idx) => (
-                        <div 
-                          key={idx} 
-                          className="skill-icon group relative"
-                          title={item.name}
-                        >
-                          <div className="h-16 w-16 mx-auto flex items-center justify-center bg-white dark:bg-gray-800 rounded-lg shadow-sm transition-all duration-300 group-hover:shadow-md">
-                            <img 
-                              src={item.image} 
-                              alt={item.name} 
-                              className="w-10 h-10 object-contain"
-                            />
-                          </div>
-                          <div className="text-xs text-center mt-2 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            {item.name}
-                          </div>
-                        </div>
-                      ))}
-                    </div>
+        </div>
+        
+        {/* Skills - Now below the background section */}
+        <div className={`transition-all duration-700 delay-300 ${
+          isVisible ? 'opacity-100' : 'opacity-0 translate-y-4'
+        }`}>
+          <div className="tech-card p-6">
+            <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
+              <Code className="w-5 h-5 text-purple-500" />
+              <span>{t('about.skills')}</span>
+            </h3>
+            
+            <div className="space-y-8">
+              {skills.map((skill, index) => (
+                <div key={index} className="border-b border-border pb-6 last:border-0 last:pb-0">
+                  <div className="flex items-center gap-2 mb-4 text-purple-600 dark:text-purple-400">
+                    {skill.icon}
+                    <h4 className="font-medium">{skill.name}</h4>
                   </div>
-                ))}
-              </div>
+                  
+                  <div className="grid grid-cols-3 sm:grid-cols-5 gap-4">
+                    {skill.items.map((item, idx) => (
+                      <div 
+                        key={idx} 
+                        className="skill-icon group relative"
+                        title={item.name}
+                      >
+                        <div className="h-16 w-16 mx-auto flex items-center justify-center bg-white dark:bg-gray-800 rounded-lg shadow-sm transition-all duration-300 group-hover:shadow-md">
+                          <img 
+                            src={item.image} 
+                            alt={item.name} 
+                            className="w-10 h-10 object-contain"
+                          />
+                        </div>
+                        <div className="text-xs text-center mt-2 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          {item.name}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
