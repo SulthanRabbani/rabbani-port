@@ -114,10 +114,11 @@ const About = () => {
           <div className="tech-card p-6">
             <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
               <Code className="w-5 h-5 text-purple-500" />
-              <span>Technologies</span>
+              <span>{t('about.skills')}</span>
             </h3>
             
-            <div className="overflow-hidden relative">
+            {/* Desktop view with carousel animation */}
+            <div className="hidden md:block overflow-hidden relative">
               <div className="skills-carousel">
                 <div className="skills-track">
                   {[...Array(2)].map((_, repeatIndex) => (
@@ -146,7 +147,8 @@ const About = () => {
               </div>
             </div>
             
-            <div className="grid grid-cols-3 sm:grid-cols-5 gap-4 md:hidden">
+            {/* Mobile view with static grid */}
+            <div className="grid grid-cols-3 sm:grid-cols-4 gap-4 md:hidden">
               {allSkills.map((item, idx) => (
                 <div 
                   key={idx} 
