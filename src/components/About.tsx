@@ -1,4 +1,3 @@
-
 import { useRef, useEffect, useState } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { Code, Database, Layout, Server, Star, User } from 'lucide-react';
@@ -30,7 +29,6 @@ const About = () => {
     };
   }, []);
   
-  // Combined frontend and backend skills into one array
   const combinedDevSkills = [
     { name: 'React', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
     { name: 'Vue.js', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg' },
@@ -101,7 +99,6 @@ const About = () => {
           </h2>
         </div>
 
-        {/* About me text */}
         <div className={`transition-all duration-700 delay-200 mb-12 ${
           isVisible ? 'opacity-100' : 'opacity-0 translate-y-4'
         }`}>
@@ -130,7 +127,6 @@ const About = () => {
           </div>
         </div>
         
-        {/* Skills - Now with improved layout */}
         <div className={`transition-all duration-700 delay-300 ${
           isVisible ? 'opacity-100' : 'opacity-0 translate-y-4'
         }`}>
@@ -148,12 +144,10 @@ const About = () => {
                     <h4 className="font-medium">{skill.name}</h4>
                   </div>
                   
-                  {/* Desktop: Single unified list with continuous animation - Now applied to ALL skill sections */}
                   <div className="hidden md:block overflow-hidden relative">
                     <div className="skills-carousel">
-                      <div className="skills-track flex items-center gap-8">
-                        {/* We repeat the items multiple times to ensure continuous flow */}
-                        {[...Array(3)].map((_, repeatIndex) => (
+                      <div className="skills-track">
+                        {[...Array(2)].map((_, repeatIndex) => (
                           <div key={repeatIndex} className="skills-slide flex gap-8">
                             {skill.items.map((item, idx) => (
                               <div 
@@ -179,7 +173,6 @@ const About = () => {
                     </div>
                   </div>
                   
-                  {/* Mobile: Regular grid layout */}
                   <div className="grid grid-cols-3 sm:grid-cols-5 gap-4 md:hidden">
                     {skill.items.map((item, idx) => (
                       <div 
