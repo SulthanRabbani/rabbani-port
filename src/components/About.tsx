@@ -1,3 +1,4 @@
+
 import { useRef, useEffect, useState } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { Code, Star, User } from 'lucide-react';
@@ -50,14 +51,6 @@ const About = () => {
     { name: 'Git', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
     { name: 'GraphQL', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg' },
     { name: 'RESTful APIs', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' }
-  ];
-  
-  const skills = [
-    { 
-      name: 'Development', 
-      icon: <Code className="w-5 h-5" />, 
-      items: allSkills
-    }
   ];
 
   const stats = [
@@ -121,65 +114,54 @@ const About = () => {
           <div className="tech-card p-6">
             <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
               <Code className="w-5 h-5 text-purple-500" />
-              <span>{t('about.skills')}</span>
+              <span>Technologies</span>
             </h3>
             
-            <div className="space-y-8">
-              {skills.map((skill, index) => (
-                <div key={index} className="pb-6 last:pb-0">
-                  <div className="flex items-center gap-2 mb-4 text-purple-600 dark:text-purple-400">
-                    {skill.icon}
-                    <h4 className="font-medium">{skill.name}</h4>
-                  </div>
-                  
-                  <div className="hidden md:block overflow-hidden relative">
-                    <div className="skills-carousel">
-                      <div className="skills-track">
-                        {[...Array(2)].map((_, repeatIndex) => (
-                          <div key={repeatIndex} className="skills-slide flex gap-8">
-                            {skill.items.map((item, idx) => (
-                              <div 
-                                key={`${repeatIndex}-${idx}`} 
-                                className="skill-icon flex flex-col items-center"
-                                title={item.name}
-                              >
-                                <div className="h-16 w-16 flex items-center justify-center">
-                                  <img 
-                                    src={item.image} 
-                                    alt={item.name} 
-                                    className="w-10 h-10 object-contain"
-                                  />
-                                </div>
-                                <div className="text-xs text-center mt-2 text-muted-foreground">
-                                  {item.name}
-                                </div>
-                              </div>
-                            ))}
+            <div className="overflow-hidden relative">
+              <div className="skills-carousel">
+                <div className="skills-track">
+                  {[...Array(2)].map((_, repeatIndex) => (
+                    <div key={repeatIndex} className="skills-slide flex gap-8">
+                      {allSkills.map((item, idx) => (
+                        <div 
+                          key={`${repeatIndex}-${idx}`} 
+                          className="skill-icon flex flex-col items-center"
+                          title={item.name}
+                        >
+                          <div className="h-16 w-16 flex items-center justify-center">
+                            <img 
+                              src={item.image} 
+                              alt={item.name} 
+                              className="w-10 h-10 object-contain"
+                            />
                           </div>
-                        ))}
-                      </div>
+                          <div className="text-xs text-center mt-2 text-muted-foreground">
+                            {item.name}
+                          </div>
+                        </div>
+                      ))}
                     </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+            
+            <div className="grid grid-cols-3 sm:grid-cols-5 gap-4 md:hidden">
+              {allSkills.map((item, idx) => (
+                <div 
+                  key={idx} 
+                  className="skill-icon flex flex-col items-center"
+                  title={item.name}
+                >
+                  <div className="h-16 w-16 mx-auto flex items-center justify-center">
+                    <img 
+                      src={item.image} 
+                      alt={item.name} 
+                      className="w-10 h-10 object-contain"
+                    />
                   </div>
-                  
-                  <div className="grid grid-cols-3 sm:grid-cols-5 gap-4 md:hidden">
-                    {skill.items.map((item, idx) => (
-                      <div 
-                        key={idx} 
-                        className="skill-icon flex flex-col items-center"
-                        title={item.name}
-                      >
-                        <div className="h-16 w-16 mx-auto flex items-center justify-center">
-                          <img 
-                            src={item.image} 
-                            alt={item.name} 
-                            className="w-10 h-10 object-contain"
-                          />
-                        </div>
-                        <div className="text-xs text-center mt-2 text-muted-foreground">
-                          {item.name}
-                        </div>
-                      </div>
-                    ))}
+                  <div className="text-xs text-center mt-2 text-muted-foreground">
+                    {item.name}
                   </div>
                 </div>
               ))}

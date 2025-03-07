@@ -81,8 +81,8 @@ const content = {
     id: 'Klien Puas'
   },
   'about.skills': {
-    en: 'My Skills',
-    id: 'Keahlian Saya'
+    en: 'Technologies',
+    id: 'Teknologi'
   },
   'projects.subtitle': {
     en: 'My Projects',
