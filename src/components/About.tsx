@@ -133,7 +133,7 @@ const About = () => {
           </div>
         </div>
         
-        {/* Skills - Now below the background section with continuous horizontal scroll animation on desktop */}
+        {/* Skills - Now with improved layout */}
         <div className={`transition-all duration-700 delay-300 ${
           isVisible ? 'opacity-100' : 'opacity-0 translate-y-4'
         }`}>
@@ -151,48 +151,34 @@ const About = () => {
                     <h4 className="font-medium">{skill.name}</h4>
                   </div>
                   
-                  {/* Desktop: Horizontal scrolling container with continuous animation */}
-                  <div className="hidden md:block overflow-hidden relative w-full">
-                    <div className="skill-slider flex gap-8 py-2">
-                      {/* First set of items */}
-                      {skill.items.map((item, idx) => (
-                        <div 
-                          key={`first-${idx}`} 
-                          className="skill-icon group relative flex-shrink-0"
-                          title={item.name}
-                        >
-                          <div className="h-16 w-16 flex items-center justify-center bg-white dark:bg-gray-800 rounded-lg shadow-sm transition-all duration-300 group-hover:shadow-md">
-                            <img 
-                              src={item.image} 
-                              alt={item.name} 
-                              className="w-10 h-10 object-contain"
-                            />
+                  {/* Desktop: Single unified list with continuous animation */}
+                  <div className="hidden md:block overflow-hidden relative">
+                    <div className="skills-carousel">
+                      <div className="skills-track flex items-center">
+                        {/* We repeat the items multiple times to ensure continuous flow */}
+                        {[...Array(3)].map((_, repeatIndex) => (
+                          <div key={repeatIndex} className="skills-slide flex gap-6">
+                            {skill.items.map((item, idx) => (
+                              <div 
+                                key={`${repeatIndex}-${idx}`} 
+                                className="skill-icon group relative"
+                                title={item.name}
+                              >
+                                <div className="h-16 w-16 flex items-center justify-center bg-white dark:bg-gray-800 rounded-lg shadow-sm transition-all duration-300 group-hover:shadow-md">
+                                  <img 
+                                    src={item.image} 
+                                    alt={item.name} 
+                                    className="w-10 h-10 object-contain"
+                                  />
+                                </div>
+                                <div className="text-xs text-center mt-2 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                  {item.name}
+                                </div>
+                              </div>
+                            ))}
                           </div>
-                          <div className="text-xs text-center mt-2 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            {item.name}
-                          </div>
-                        </div>
-                      ))}
-                      
-                      {/* Duplicate set for seamless looping */}
-                      {skill.items.map((item, idx) => (
-                        <div 
-                          key={`second-${idx}`} 
-                          className="skill-icon group relative flex-shrink-0"
-                          title={item.name}
-                        >
-                          <div className="h-16 w-16 flex items-center justify-center bg-white dark:bg-gray-800 rounded-lg shadow-sm transition-all duration-300 group-hover:shadow-md">
-                            <img 
-                              src={item.image} 
-                              alt={item.name} 
-                              className="w-10 h-10 object-contain"
-                            />
-                          </div>
-                          <div className="text-xs text-center mt-2 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            {item.name}
-                          </div>
-                        </div>
-                      ))}
+                        ))}
+                      </div>
                     </div>
                   </div>
                   

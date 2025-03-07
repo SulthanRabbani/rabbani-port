@@ -128,23 +128,35 @@
     display: none;
   }
   
-  /* Skill slider animation for desktop */
-  .skill-slider {
-    display: flex;
-    animation: slideSkills 30s linear infinite;
-    width: max-content;
+  /* Enhanced skill carousel animation */
+  .skills-carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100px;
+    padding: 10px 0;
   }
   
-  @keyframes slideSkills {
+  .skills-track {
+    position: absolute;
+    white-space: nowrap;
+    will-change: transform;
+    animation: scroll 30s linear infinite;
+    width: fit-content;
+  }
+  
+  .skills-slide {
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  @keyframes scroll {
     0% {
       transform: translateX(0);
     }
     100% {
-      transform: translateX(-50%);
+      transform: translateX(-33.33%); /* This ensures smooth looping with our 3x repeat */
     }
   }
-  
-  .skill-slider:hover {
-    animation-play-state: paused;
-  }
 }
+
