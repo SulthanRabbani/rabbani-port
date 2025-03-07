@@ -1,7 +1,24 @@
 
 import { useRef, useEffect, useState } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
-import { Code, Database, Layout, Server, Star, User } from 'lucide-react';
+import { 
+  Code, 
+  Database, 
+  Layout, 
+  Server, 
+  Star, 
+  User,
+  Globe,
+  Cpu,
+  Cloud,
+  BarChart,
+  Layers,
+  Pencil,
+  Terminal,
+  FileCode,
+  PackageCheck,
+  Smartphone
+} from 'lucide-react';
 
 const About = () => {
   const { t } = useLanguage();
@@ -34,22 +51,46 @@ const About = () => {
     { 
       name: 'Frontend', 
       icon: <Layout className="w-5 h-5" />, 
-      items: ['React', 'Vue.js', 'Next.js', 'TypeScript', 'Tailwind CSS'] 
+      items: [
+        { name: 'React', icon: <Code className="w-4 h-4" /> },
+        { name: 'Vue.js', icon: <Layers className="w-4 h-4" /> },
+        { name: 'Next.js', icon: <Globe className="w-4 h-4" /> },
+        { name: 'TypeScript', icon: <FileCode className="w-4 h-4" /> },
+        { name: 'Tailwind CSS', icon: <Pencil className="w-4 h-4" /> }
+      ] 
     },
     { 
       name: 'Backend', 
       icon: <Server className="w-5 h-5" />, 
-      items: ['Node.js', 'Express', 'Django', 'Laravel', 'Spring Boot'] 
+      items: [
+        { name: 'Node.js', icon: <Terminal className="w-4 h-4" /> },
+        { name: 'Express', icon: <PackageCheck className="w-4 h-4" /> },
+        { name: 'Django', icon: <Globe className="w-4 h-4" /> },
+        { name: 'Laravel', icon: <Code className="w-4 h-4" /> },
+        { name: 'Spring Boot', icon: <Layers className="w-4 h-4" /> }
+      ] 
     },
     { 
       name: 'Database', 
       icon: <Database className="w-5 h-5" />, 
-      items: ['MongoDB', 'PostgreSQL', 'MySQL', 'Redis', 'Firebase'] 
+      items: [
+        { name: 'MongoDB', icon: <Database className="w-4 h-4" /> },
+        { name: 'PostgreSQL', icon: <Database className="w-4 h-4" /> },
+        { name: 'MySQL', icon: <Database className="w-4 h-4" /> },
+        { name: 'Redis', icon: <Database className="w-4 h-4" /> },
+        { name: 'Firebase', icon: <Cloud className="w-4 h-4" /> }
+      ] 
     },
     { 
       name: 'Other', 
       icon: <Code className="w-5 h-5" />, 
-      items: ['Docker', 'AWS', 'Git', 'GraphQL', 'RESTful APIs'] 
+      items: [
+        { name: 'Docker', icon: <PackageCheck className="w-4 h-4" /> },
+        { name: 'AWS', icon: <Cloud className="w-4 h-4" /> },
+        { name: 'Git', icon: <Code className="w-4 h-4" /> },
+        { name: 'GraphQL', icon: <Cpu className="w-4 h-4" /> },
+        { name: 'RESTful APIs', icon: <Globe className="w-4 h-4" /> }
+      ] 
     },
   ];
 
@@ -133,12 +174,16 @@ const About = () => {
                     
                     <div className="flex flex-wrap gap-2">
                       {skill.items.map((item, idx) => (
-                        <span 
+                        <div 
                           key={idx} 
-                          className="px-3 py-1 text-xs rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300"
+                          className="px-3 py-2 flex flex-col items-center justify-center rounded-lg bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300"
+                          title={item.name}
                         >
-                          {item}
-                        </span>
+                          <div className="p-2">
+                            {item.icon}
+                          </div>
+                          <span className="text-xs mt-1">{item.name}</span>
+                        </div>
                       ))}
                     </div>
                   </div>
