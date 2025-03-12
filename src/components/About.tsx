@@ -1,6 +1,7 @@
+
 import { useRef, useEffect, useState } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
-import { Code, Star, User, Briefcase } from 'lucide-react';
+import { Code, Star, User, Briefcase, Building, Factory, Store } from 'lucide-react';
 
 const About = () => {
   const { t } = useLanguage();
@@ -61,6 +62,7 @@ const About = () => {
   const workExperience = [
     {
       company: t('experience.company1'),
+      logo: <Building className="w-8 h-8 text-purple-500" />,
       positions: [
         {
           role: t('experience.role1'),
@@ -78,6 +80,7 @@ const About = () => {
     },
     {
       company: t('experience.company2'),
+      logo: <Store className="w-8 h-8 text-purple-500" />,
       positions: [
         {
           role: t('experience.role3'),
@@ -150,8 +153,11 @@ const About = () => {
             <div className="space-y-8">
               {workExperience.map((company, companyIndex) => (
                 <div key={companyIndex} className="relative">
-                  <div className="mb-3 font-semibold text-lg text-purple-600 dark:text-purple-400">
-                    {company.company}
+                  <div className="mb-3 font-semibold text-lg flex items-center gap-3">
+                    <div className="p-2 rounded-lg bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center">
+                      {company.logo}
+                    </div>
+                    <span className="text-purple-600 dark:text-purple-400">{company.company}</span>
                   </div>
                   
                   <div className="space-y-6">
