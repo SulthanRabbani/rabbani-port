@@ -1,3 +1,4 @@
+
 import { useRef, useEffect, useState } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { Code, Star, User, Briefcase } from 'lucide-react';
@@ -61,18 +62,21 @@ const About = () => {
   const workExperience = [
     {
       role: t('experience.role1'),
+      company: t('experience.company1'),
       period: "2021 - Present",
       description: t('experience.description1'),
       skills: ["React", "Next.js", "TypeScript"]
     },
     {
       role: t('experience.role2'),
+      company: t('experience.company2'),
       period: "2019 - 2021",
       description: t('experience.description2'),
       skills: ["Vue.js", "Node.js", "MongoDB"]
     },
     {
       role: t('experience.role3'),
+      company: t('experience.company3'),
       period: "2018 - 2019",
       description: t('experience.description3'),
       skills: ["JavaScript", "PHP", "MySQL"]
@@ -137,18 +141,16 @@ const About = () => {
               <span>{t('about.workExperience')}</span>
             </h3>
             
-            <div className="mb-4 text-lg font-medium text-purple-600 dark:text-purple-400">
-              {t('experience.company')}
-            </div>
-            
             <div className="space-y-6">
               {workExperience.map((job, index) => (
                 <div key={index} className="relative pl-6 border-l-2 border-purple-200 dark:border-purple-800">
                   <div className="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-purple-500"></div>
                   <div className="mb-1">
                     <h4 className="text-lg font-semibold">{job.role}</h4>
-                    <div className="text-sm text-muted-foreground">
-                      {job.period}
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 text-sm">
+                      <span className="font-medium text-purple-600 dark:text-purple-400">{job.company}</span>
+                      <span className="hidden sm:block text-gray-500">•</span>
+                      <span className="text-muted-foreground">{job.period}</span>
                     </div>
                   </div>
                   <p className="text-muted-foreground mt-2 mb-3">{job.description}</p>

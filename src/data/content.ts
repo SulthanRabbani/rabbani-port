@@ -87,29 +87,37 @@ const content = {
     en: 'Work Experience',
     id: 'Pengalaman Kerja'
   },
-  'experience.company': {
+  'experience.company1': {
     en: 'ABC Technology Solutions',
     id: 'ABC Technology Solutions'
+  },
+  'experience.company2': {
+    en: 'XYZ Digital Innovations',
+    id: 'XYZ Digital Innovations'
+  },
+  'experience.company3': {
+    en: 'TechNova Systems',
+    id: 'TechNova Systems'
   },
   'experience.role1': {
     en: 'Senior Full Stack Developer',
     id: 'Pengembang Full Stack Senior'
   },
-  'experience.description1': {
-    en: 'Developed and maintained full-stack web applications with a focus on Front-End technologies. Integrated AI technologies to automate workflows, enhance data analysis, and improve functionalities.',
-    id: 'Mengembangkan dan memelihara aplikasi web full-stack dengan fokus pada teknologi Front-End. Mengintegrasikan teknologi AI untuk mengotomatisasi alur kerja, meningkatkan analisis data, dan memperbaiki fungsionalitas.'
-  },
   'experience.role2': {
     en: 'Full Stack Developer',
     id: 'Pengembang Full Stack'
   },
-  'experience.description2': {
-    en: 'Collaborated with cross-functional teams to achieve project goals efficiently. Conducted regular code reviews to maintain high coding standards.',
-    id: 'Berkolaborasi dengan tim lintas fungsi untuk mencapai tujuan proyek secara efisien. Melakukan tinjauan kode secara berkala untuk mempertahankan standar pengkodean yang tinggi.'
-  },
   'experience.role3': {
     en: 'Junior Web Developer',
     id: 'Pengembang Web Junior'
+  },
+  'experience.description1': {
+    en: 'Developed and maintained full-stack web applications with a focus on Front-End technologies. Integrated AI technologies to automate workflows, enhance data analysis, and improve functionalities.',
+    id: 'Mengembangkan dan memelihara aplikasi web full-stack dengan fokus pada teknologi Front-End. Mengintegrasikan teknologi AI untuk mengotomatisasi alur kerja, meningkatkan analisis data, dan memperbaiki fungsionalitas.'
+  },
+  'experience.description2': {
+    en: 'Collaborated with cross-functional teams to achieve project goals efficiently. Conducted regular code reviews to maintain high coding standards.',
+    id: 'Berkolaborasi dengan tim lintas fungsi untuk mencapai tujuan proyek secara efisien. Melakukan tinjauan kode secara berkala untuk mempertahankan standar pengkodean yang tinggi.'
   },
   'experience.description3': {
     en: 'Led end-to-end development of dynamic web applications, ensuring seamless front-end and back-end integration. Implemented responsive design principles to enhance user experience across devices.',
